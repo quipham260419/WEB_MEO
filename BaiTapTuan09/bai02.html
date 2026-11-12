@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    input {
+        width: 500px;
+        padding: 10px;
+    }
+    
+    button {
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div id="test">
+        <input id="inputText" type="text" placeholder="Nhap input">
+        <button id="btn">Kiem tra</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        $("#btn").click(() => {
+            var inputText = $('#inputText').val()
+            var pattern = /^[0-9]{10}$/
+
+            if (pattern.test(inputText)) {
+                $('#result').text("ĐÚNG pattern")
+
+            } else {
+                $('#result').text("SAI pattern")
+            }
+        })
+    </script>
+</body>
+
+</html>

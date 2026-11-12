@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<style>
+    input {
+        width: 500px;
+        padding: 10px;
+    }
+    
+    button {
+        padding: 10px;
+    }
+    
+    input.valid {
+        border-color: 1px 2px solid green;
+    }
+    
+    input.invalid {
+        border-color: red;
+    }
+</style>
+
+<body>
+    <div id="test">
+        <input id="inputText" type="text" placeholder="Nhap input">
+        <button id="btn">Kiem tra</button>
+        <p id="result"></p>
+        <div id="msg"></div>
+    </div>
+    <script>
+        $("#btn").click(() => {
+            var inputText = $('#inputText').val()
+            var pattern = /^[0-9]{10}$/
+
+
+            if (pattern.test(inputText)) {
+                $(this).removeClass('invalid').addClass('valid')
+
+            } else {
+                $(this).removeClass('valid').addClass('invalid');
+
+            }
+        })
+    </script>
+</body>
+
+</html>
